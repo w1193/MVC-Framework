@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // MVN repository 에서 검색 해주면 implementation(dependency) 을 검색 해 볼 수 있음
+    // mvnrepository.com
+    implementation 'org.apache.tomcat.embed:tomcat-embed-core:11.0.0-M13'   // 톰캣 사용 예정
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:8.5.42' // 톰캣 사용 예정
+
+    implementation 'javax.servlet:javax.servlet-api:4.0.1' // 서블릿 추가 ( 웹 서버용 )
+    implementation 'javax.servlet:jstl:1.2' // jstl 을 이용한 서블릿
+
+    
+    implementation 'ch.qos.logback:logback-classic:1.4.14' // 로그 출력을 도구
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
