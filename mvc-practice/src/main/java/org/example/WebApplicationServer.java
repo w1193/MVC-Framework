@@ -13,6 +13,7 @@ public class WebApplicationServer {
     private static final Logger log = LoggerFactory.getLogger(WebApplicationServer.class);
 
     public static void main(String[] args) throws Exception {
+        // Tomcat 은 root\WEB-INF\classes 에 있는 파일을 받아오기 때문에 설정 해줘야 한다.
         String webappDirLocation = "webapps/";
         Tomcat tomcat = new Tomcat();
         tomcat.setPort(8080);
